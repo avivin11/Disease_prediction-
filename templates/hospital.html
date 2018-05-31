@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Registration</title>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    
+    <link href="static/css/carousel.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+      <link rel="stylesheet" href="static/css/style.css">
+
+  
+</head>
+
+<body>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+       <script>
+         var messages = {{ messages | safe }};
+         for (var i=0; i<messages.length; i++) {
+           alert(messages[i]);
+         }
+       </script>
+    {% endif %}
+  {% endwith %}
+  
+  <div class="navbar-wrapper">
+      <div class="container">
+          <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Disease Prediction</a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="index.html">Predict</a></li>
+                  <li><a href="Doctor.html">Doctor</a></li>
+                  <li><a href="#">Help</a></li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                  <input type="text" class="form-control" placeholder="Search...">
+                </form>
+              </div>
+            </div>
+          </nav>
+
+      </div>
+    </div>
+      
+  
+  	<div class="form">      
+        <h1>Hospital Detail</h1>
+          
+          <form action="/Frontpage.html" method="POST">
+          
+          
+            <div class="field-wrap">
+              <label>
+                Hospital Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" pattern="[A-Za-z ]{2,}" title="Enter Valid Name" name="hospital" />
+            </div>
+        
+           
+
+          <div class="field-wrap">
+            <label>
+              Contact no.<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" pattern="[0-9]{10,11}" title="Enter Valid Contact no." name="contact" />
+          </div>
+
+          <div class="field-wrap">
+            <label>
+             Address<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" pattern="[A-Za-z1-9,.- ]{5,}" title="Enter Valid Address" name="address" />
+          </div>
+
+
+          <div class="field-wrap">
+            <label>
+             City<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" pattern="[A-Za-z]{2,}" title="Enter Valid city" name="city" />
+          </div>
+          
+			<button type="submit" class="button button-block" formaction="/Frontpage.html" method="POST">Submit Details</button>
+          
+          </form>
+            
+   </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="static/js/index.js"></script>
+
+</body>
+</html>

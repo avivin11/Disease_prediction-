@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Prediction table</title>
+
+    
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="static/css/dashboard.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    
+   
+    <script src="static/js/ie-emulation-modes-warning.js"></script>
+
+  </head>
+
+  <body>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+       <script>
+         var messages = {{ messages | safe }};
+         for (var i=0; i<messages.length; i++) {
+           alert(messages[i]);
+        }
+      </script>
+    {% endif %}
+  {% endwith %}
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Disease Prediction</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="Frontpage.html" >Home</a></li>
+            <li><a href="index.html">Predict</a></li>
+            <li><a href="Doctor.html">Doctor</a></li>
+            <li><a href="hospital.html">Hospital</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+          <div class="jumbotron">
+        <h1>Result</h1>
+        <p>We try to give most appropriate information to our people. We care for your health and always wish for your long and enjoyable life.Eat good and stay fit</p>
+      </div>
+      
+          <h2>Prediction Table</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Sr.No.</th>
+                  <th class="danger">Disease</th>
+                  <th>Symptoms</th>
+                  <th>Doctor</th>
+                  <th>Hospital</th>
+                  <th>Address</th>
+                </tr>
+              </thead>
+              {% for i in Data %}
+              
+              <tbody>
+                <tr>
+                  {% for j in i %}
+
+                  <td>{{ j }}</td>
+
+                  {% endfor %}
+                </tr>
+              </tbody>
+
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
